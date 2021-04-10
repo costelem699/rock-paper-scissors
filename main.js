@@ -35,12 +35,13 @@ function playRound(playerSelection, compChoice){
     }
         
 }
-function game(playerSelection){
+function game(){
     let playerScore = 0;
     let compScore = 0;
     while(playerScore < 5 && compScore < 5){
         let compChoice = computerPlay();
-        let result = playRound("rock", compChoice);
+        let playerChoice = prompt("Choose your weapon");
+        let result = playRound(playerChoice, compChoice);
             console.log(result);
             if(result =="You Win"){
                 playerScore = ++playerScore;
@@ -59,7 +60,7 @@ function game(playerSelection){
         
     }
 
-console.log(game("rock"));
+console.log(game());
 
 
 
