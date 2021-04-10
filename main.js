@@ -1,6 +1,5 @@
 function computerPlay(){
     choiceNum = Math.floor(Math.random() * (4 - 1 ) ) + 1;
-    console.log(choiceNum);
     return choiceNum;
 }
 function playRound(playerSelection, compChoice){
@@ -36,9 +35,33 @@ function playRound(playerSelection, compChoice){
     }
         
 }
+function game(playerSelection){
+    let playerScore = 0;
+    let compScore = 0;
+    while(playerScore < 5 && compScore < 5){
+        let compChoice = computerPlay();
+        let result = playRound("rock", compChoice);
+            console.log(result);
+            if(result =="You Win"){
+                playerScore = ++playerScore;
+            }
+            else if(result == "You Lose"){
+                compScore = ++compScore;
+            }
+            console.log(playerScore + " " + compScore);
+        }
+            if (compScore > playerScore){
+                return "Computer Wins";
+            }
+            else{
+                return "Player Wins!"
+            }
+        
+    }
+
+console.log(game("rock"));
 
 
 
-let compChoice = computerPlay();
 
-console.log(playRound("rock", compChoice));
+
